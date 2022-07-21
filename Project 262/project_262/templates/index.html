@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <style>
+
+            body {
+                text-align: center;
+                margin-top: 50px;
+                font-size: 25px;
+                background-color: #C7EEFF;
+            }
+
+            h1 {
+                color: #273085;
+                font-family: Roboto, sans-serif;
+            }
+
+            img {
+                border: none;
+            }
+
+            p {
+                font-size: 25px;
+                color: #273085;
+                font-family: Roboto, sans-serif;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <h1>Calculator App</h1>
+        <br>
+
+        <img src="{{url_for('static', filename='img_Phone.jpg') }}">
+
+        <form method="post">
+            <label>
+                <select name="operation" id="operation"">
+                    <optgroup label="Operations">
+                        <option value="simplify">Simplify</option>
+                        <option value="factor">Factor</option>
+                        <option value="derive">Derive</option>
+                    </optgroup>
+                </select>
+            </label>
+
+            <input type="text" placeholder="Equation" name="text">
+            <input type="submit">
+        </form>
+        <br>
+
+        <p>The result of {{ equation }} is = {{ result }}</p>
+    </body>
+
+</html>
