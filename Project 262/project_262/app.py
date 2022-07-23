@@ -14,6 +14,10 @@ def data():
     data = requests.get(f'https://newton.now.sh/api/v2//{operation}/{solve}').json()
     result = data['result']
 
+    print('Operation -', data['operation'])
+    print('Expression -', data['expression'])
+    print('Result -', result)
+
     return render_template('index.html', equation=solve, result=result)
 
 if __name__ == '__main__':
