@@ -17,20 +17,18 @@
 
 <form method="post" action="/" enctype="multipart/form-data">
 
-	<input  class="btn btn-warning btn-lg" type="file" name="file"><br>
+	<input  class="btn btn-warning" type="file" name="file">
+	<br>
 	<input class="btn btn-primary" type="text" name="degree" placeholder="degree to rotate">
-
+	<br>
+	<br>
+	<input type="submit" value="Submit" class="btn btn-success">
+	<br>
+	<br>
+	<img src="{{ url_for('display_image', filename=filename) }}">
 </form><br>
+<br>
 
-<video autoplay="autoplay" controls="controls"  >
-	<source src="{{ url_for('display_video', filename=filename) }}" type="video/mp4"></source>
-</video><br>
-
-<!-- Add Download button code below  -->
-
-
-
-<!-- Code ends  -->
 </center>
 
 </body>

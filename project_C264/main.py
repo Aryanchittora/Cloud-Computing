@@ -27,14 +27,14 @@ def upload_video():
     try:
         while True:
             status, frame_img = vid_capture.read()
-            convert = cv2.cvtColor(frame_img, cv2.COLOR_RGB2GRAY)
+            convert = cv2.cvtColor(frame_img, cv2.COLOR_BGR2GRAY)
             result.write(convert)
             video_file = 'blackandwhite.mp4'
     except:
         print('Completed Writing All Frames')
         print(status)
 
-    return render_template('upload.html', filename=filename)
+    return render_template('upload.html', filename=video_file)
 
 @app.route('/download')
 def download_file():
@@ -44,7 +44,7 @@ def download_file():
 # Define display_video() to Display video in defined folder and route the webapp  
 @app.route('/display/<filename>')
 def display_video(filename):
-    return redirect(url_for('static', filename='blackandwhite.mp4'))
+    return redirect(url_for('static', filename=filename))
 
 if __name__ == "__main__":
     app.run()
